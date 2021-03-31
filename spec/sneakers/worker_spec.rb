@@ -177,7 +177,7 @@ describe Sneakers::Worker do
           :threads => 10,
           :share_threads => false,
           :ack => true,
-          :amqp => "amqp://guest:guest@localhost:5672",
+          :amqp => ENV['RABBITMQ_URL'] || "amqp://guest:guest@localhost:5672",
           :vhost => "/",
           :exchange => "sneakers",
           :exchange_options => {
@@ -215,7 +215,7 @@ describe Sneakers::Worker do
           :threads => 50,
           :share_threads => false,
           :ack => false,
-          :amqp => "amqp://guest:guest@localhost:5672",
+          :amqp => ENV['RABBITMQ_URL'] || "amqp://guest:guest@localhost:5672",
           :vhost => "/",
           :exchange => "dummy",
           :exchange_options => {
@@ -253,7 +253,7 @@ describe Sneakers::Worker do
           :threads => 10,
           :share_threads => false,
           :ack => true,
-          :amqp => "amqp://guest:guest@localhost:5672",
+          :amqp => ENV['RABBITMQ_URL'] || "amqp://guest:guest@localhost:5672",
           :vhost => "/",
           :exchange => "sneakers",
           :exchange_options => {
